@@ -18,9 +18,7 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get personajes(){
-    return this.dbzService.personajes;
-  }
+  
 
   /*get personajes():Personaje[]{
     return this.dbzService.personajes;
