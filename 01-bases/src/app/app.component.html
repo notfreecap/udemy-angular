@@ -1,3 +1,29 @@
 <h1>Hola mundo</h1>
 <h1>{{title}}</h1>
 <h1>{{1+1}}</h1>
+
+<button (click)="numero = numero + 1;">+1</button>
+<h6>{{numero}}</h6>
+<button (click)="numero = numero - 1;">-1</button>
+<hr>
+<button (click)="acumular(1)">+1</button>
+<span>{{numero}}</span>
+<button (click)="acumular(-1)">-1</button>
+
+<hr>
+<button (click)="acumular(base)">+{{base}}</button>
+<span>{{numero}}</span>
+<button (click)="acumular(base*-1)">-{{base}}</button>
+
+
+<app-contador></app-contador>
+
+
+<hr>
+<app-heroe></app-heroe>
+
+<hr>
+<app-listado></app-listado>
+
+<hr>
+<app-main-page></app-main-page>
