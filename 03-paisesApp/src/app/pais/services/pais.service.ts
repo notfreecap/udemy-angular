@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Country } from '../interfaces/pais.interface';
 import { CallingCode } from '../interfaces/callingCode.interface';
@@ -9,8 +9,10 @@ import { CallingCode } from '../interfaces/callingCode.interface';
 })
 export class PaisService {
 
-  private apiUrl: string = 'https://restcountries.com/v3.1';///name/peru
-  private apiUrlV2: string = 'https://restcountries.com/v2';
+  private apiUrl: string = 'https://restcountries.com/v3.1';
+  get getParams(){
+    return new HttpParams().set('fields', 'flag,capital,name,population,cioc');
+  }
 
 
   constructor(private http: HttpClient) { }
@@ -19,17 +21,23 @@ export class PaisService {
   buscarPais(termino: string): Observable<Country[]>{
 
     const url = `${this.apiUrl}/name/${termino}`;
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, {params: this.getParams});
   }
 
   buscarCapital(termino:string): Observable<Country[]>{
     const url = `${this.apiUrl}/capital/${termino}`;
-    return this.http.get<Country[]>(url);
+    return this.http.get<Country[]>(url, {params: this.getParams});
   }
   
-  getPaisPorAlpha(id:number): Observable<CallingCode[]>{
-    const url = `${this.apiUrlV2}/callingcode/${id}`
-    return this.http.get<CallingCode[]>(url);
+  getPaisPorAlpha(id:string): Observable<Country[]>{
+    const url = `${this.apiUrl}/alpha/codes=${id}`
+    return this.http.get<Country[]>(url);
+  }
+
+  buscarRegion(region:string): Observable<Country[]>{
+    
+    const url = `${this.apiUrl}/region/${region}`
+    return this.http.get<Country[]>(url, {params: this.getParams});
   }
 
 }

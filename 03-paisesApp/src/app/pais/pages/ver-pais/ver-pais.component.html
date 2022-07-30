@@ -5,22 +5,22 @@
 <ng-template #divPais>
     <div class="row">
         <div class="col-12">
-            <h1>Pais: <small>{{pais.name}}</small></h1>
+            <h1>Pais: <small>{{pais.name.official}}</small></h1>
         </div>        
     </div>
     <div class="row">
         <div class="col-4">
-            <h3>Bandera</h3>
-            <img [src]="pais.flag" class="img-thumbnail">
+            <h3>Bandera</h3><br>
+            <h1>{{pais.flag}}</h1>
         </div>
         <div class="col">
             <h3>Informacion</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Poblacion: </strong>{{pais.population}}
+                    <strong>Region: </strong>{{pais.region}}
                 </li>
                 <li class="list-group-item">
-                    <strong>Codigo Numerico: </strong>{{pais.cioc}}
+                    <strong>Codigo: </strong>{{pais.cioc}}
                 </li>
                 <li class="list-group-item">
                     <strong>Poblacion: </strong>{{pais.population | number}}
@@ -32,17 +32,28 @@
     <h3>Traducciones</h3>
     <div class="row">
         <div class="col">
-            <span class="badge bg-primary mr-1">{{pais.translations.br}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.pt}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.nl}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.hr}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.fa}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.de}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.es}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.fr}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.ja}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.it}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.hu}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['ara'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['ces'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['cym'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['deu'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['est'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['fin'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['fra'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['hrv'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['hun'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['ita'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['jpn'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['kor'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['nld'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['per'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['pol'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['por'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['rus'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['slk'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['spa'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['swe'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['urd'].common}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations['zho'].common}}</span>        
         </div>
     </div>
     <pre class="mt-5">

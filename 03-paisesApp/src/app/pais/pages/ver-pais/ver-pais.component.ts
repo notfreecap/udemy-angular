@@ -12,7 +12,7 @@ import { CallingCode } from '../../interfaces/callingCode.interface';
 })
 export class VerPaisComponent implements OnInit {
 
-  pais!: CallingCode;
+  pais!: Country;
 
   constructor(
       private activatedRoute: ActivatedRoute,
