@@ -1,0 +1,91 @@
+<h2>Reactivos: Basicos</h2>
+<hr>
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+                    <input 
+                        class="form-control"
+                        type="text"
+                        formControlName="nombre"
+                        id="nombre"
+                        placeholder="Nombre del producto">
+                    <span 
+                        class="form-text text-danger"
+                        *ngIf="obtenerCampo('nombre')">
+                        Debe ser de 3 letras
+                    </span>
+                </div>
+            </div>
+
+            <!-- Precio del producto -->
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input 
+                        class="form-control"
+                        type="number"
+                        formControlName="precio"
+                        placeholder="Precio del producto">     
+                    <span 
+                        class="form-text text-danger"
+                        *ngIf="obtenerCampo('precio')">
+                        El precio debe ser mayor que cero
+                    </span>               
+                </div>
+            </div>
+
+            <!-- Existencias del producto -->
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Existencias</label>
+                <div class="col-sm-9">
+                    <input 
+                        class="form-control"
+                        type="number"
+                        formControlName="existencias"
+                        placeholder="Existencias del producto">
+                    <span 
+                        class="form-text text-danger"
+                        *ngIf="obtenerCampo('existencias')">
+                        Las existencias deben ser mayor que cero
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button
+                        type="submit"                        
+                        class="btn btn-primary float-end">
+                        Buardar
+                    </button>
+                </div>
+            </div>        
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{miFormulario.valid}}</pre>
+
+
+        <span>Preitine</span>
+        <pre>{{miFormulario.pristine}}</pre>
+
+        <span>Touched</span>
+        <pre>{{miFormulario.touched}}</pre>
+
+        <span>Value</span>
+        <pre>{{miFormulario.value | json}}</pre>
+
+        <span>que es?</span>
+        <pre>{{miFormulario.errors}}</pre>
+    </div>    
+</div>

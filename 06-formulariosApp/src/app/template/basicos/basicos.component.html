@@ -1,0 +1,88 @@
+<h2>Template: Basicos</h2>
+<hr>
+<div class="row">
+    <div class="col">
+
+        <form 
+            (ngSubmit)="guardar()" 
+            #miFormulario="ngForm"
+            autocomplete="off">
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+                    <input 
+                        class="form-control"
+                        type="text"
+                        [ngModel]="initForm.productos"
+                        name="producto"
+                        placeholder="Nombre del producto"
+                        required
+                        minlength="3">
+                    <span 
+                        class="form-text text-danger">
+                        Debe ser de 3 letras
+                    </span>
+                </div>
+            </div>
+
+            <!-- Precio del producto -->
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input 
+                        class="form-control"
+                        type="number"
+                        [ngModel]="initForm.precio"
+                        customMin
+                        [minimo]="0"
+                        name="precio"
+                        placeholder="Precio del producto">                    
+                </div>
+            </div>
+
+            <!-- Existencias del producto -->
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Existencias</label>
+                <div class="col-sm-9">
+                    <input 
+                        class="form-control"
+                        type="number"
+                        [ngModel]="initForm.existencias"
+                        name="existencias"
+                        placeholder="Existencias del producto">                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button
+                        type="submit"
+                        class="btn btn-primary float-end">
+                        Buardar
+                    </button>
+                </div>
+            </div>
+            
+
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{miFormulario.valid}}</pre>
+
+
+        <span>Preitine</span>
+        <pre>{{miFormulario.pristine}}</pre>
+
+        <span>Touched</span>
+        <pre>{{miFormulario.touched}}</pre>
+
+        <span>Value</span>
+        <pre>{{miFormulario.value | json}}</pre>
+    </div>    
+</div>
