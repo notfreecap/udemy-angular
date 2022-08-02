@@ -40,16 +40,12 @@ export class SidemenuComponent implements OnInit {
 
   authMenu: MenuItem[] = [
     {
-      texto: 'Basicos',
-      ruta: './reactive/basicos'
+      texto: 'Login',
+      ruta: './auth/login'
     },
     {
-      texto: 'Dinamicos',
-      ruta: './reactive/dinamicos'
-    },
-    {
-      texto: 'Switches',
-      ruta: './reactive/switches'
+      texto: 'Registro',
+      ruta: './auth/registro'
     }
   ]
 
