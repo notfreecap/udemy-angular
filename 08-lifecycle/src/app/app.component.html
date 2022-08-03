@@ -1,0 +1,10 @@
+<h1>Ciclo de vida de los componentes de angular</h1>
+<hr>
+
+<button (click)="mostrar = !mostrar">
+  Mostrar
+</button>
+
+<br>
+
+<app-pagina1 *ngIf="mostrar"></app-pagina1>
