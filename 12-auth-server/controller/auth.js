@@ -110,7 +110,7 @@ const iniciarSesion = async(req, res) => {
                 message: 'Usuario creado correctamente',
                 user: usuario,
                 auth: {
-                    //toke: token
+                    token: token
                 },
                 errors: []
             }
